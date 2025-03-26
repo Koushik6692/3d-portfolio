@@ -138,7 +138,7 @@ const Hero = () => {
       <Container>
         <Left>
           <Title>
-            I'm <Span>KOUSHIK SARABU </Span>
+            Hey, I'm <Span>KOUSHIK SARABU </Span>
           </Title>
           <WhatWeDo>
             <Line>
