@@ -144,7 +144,7 @@ const Hero = () => {
             <Line>
               <GoDash />
             </Line>
-            <Subtitle>Web devoloper | Software Engineer</Subtitle>
+            <Subtitle>Full Stack developer | Software Engineer</Subtitle>
           </WhatWeDo>
           <Desc>
             Hello there! Thanks for stopping by. Explore my work, get inspired,
