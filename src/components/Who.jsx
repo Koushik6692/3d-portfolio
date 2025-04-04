@@ -14,8 +14,9 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: #ffffff;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Container = styled.div`
@@ -46,11 +47,6 @@ const Right = styled.div`
 
 const Title = styled.h1`
   font-size: 74px;
-  text-transform: uppercase;
-  font-weight: bold;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   @media only screen and (max-width: 768px) {
     font-size: 60px;
   }
@@ -68,7 +64,7 @@ const WhatWeDo = styled.div`
 
 const Icons = styled.p`
   width: 100%;
-  gap: 15px;
+  gap: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -80,23 +76,13 @@ const IconDetalies = styled.div`
   width: 100px;
   gap: 10px;
   align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.6);
-  }
 `;
 
 const Icon = styled.a`
   font-size: 50px;
   cursor: pointer;
-  color: #ff7e5f;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #feb47b;
-  }
+  color: #e2725b;
+  margin-top: 2px;
 `;
 
 const IconName = styled.p`
@@ -108,8 +94,19 @@ const IconName = styled.p`
 const Domain = styled.h1`
   text-align: start;
   color: #ff7518;
-  font-size: 24px;
-  font-weight: bold;
+`;
+
+const Button = styled.a`
+  background-color: orangered;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
 `;
 
 const who = () => {
