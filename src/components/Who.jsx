@@ -1,20 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-// import { GoDash } from "react-icons/go";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Cube from "./Cube";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3 } from "react-icons/fa6";
+import { FaHtml5, FaCss3, FaPython, FaNodeJs, FaJava, FaGitAlt, FaDocker } from "react-icons/fa";
 import { RiJavascriptFill, RiReactjsFill } from "react-icons/ri";
-import { FaPython } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
-import { FaJava } from "react-icons/fa6";
+import { SiMongodb, SiMysql, SiTypescript, SiNextdotjs, SiExpress, SiTailwindcss, SiBootstrap, SiTableau, SiQlik, SiCypress, SiFlask, SiFirebase, SiReact } from "react-icons/si";
+import { CgCPlusPlus } from "react-icons/cg";
 
 const Section = styled.div`
   height: 100vh;
-
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -26,7 +21,6 @@ const Section = styled.div`
 
 const Container = styled.div`
   height: 100vh;
-  /* scroll-snap-align: center; */
   width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -34,7 +28,6 @@ const Container = styled.div`
 
 const Left = styled.div`
   flex: 1;
-
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -46,7 +39,6 @@ const Right = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-
   @media only screen and (max-width: 768px) {
     align-items: center;
     text-align: center;
@@ -55,7 +47,6 @@ const Right = styled.div`
 
 const Title = styled.h1`
   font-size: 74px;
-
   @media only screen and (max-width: 768px) {
     font-size: 60px;
   }
@@ -72,22 +63,37 @@ const WhatWeDo = styled.div`
 `;
 
 const Icons = styled.p`
-  width: 450px;
+  width: 100%;
   gap: 10px;
   display: flex;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-
-    justify-content: center;
-  }
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
-const Desc = styled.p`
-  font-size: 24px;
-  color: lightgray;
+const IconDetalies = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  gap: 10px;
+  align-items: center;
+`;
+
+const Icon = styled.a`
+  font-size: 50px;
+  cursor: pointer;
+  color: #e2725b;
+  margin-top: 2px;
+`;
+
+const IconName = styled.p`
+  color: white;
+  font-size: 15px;
+  text-align: center;
+`;
+
+const Domain = styled.h1`
+  text-align: start;
+  color: #ff7518;
 `;
 
 const Button = styled.a`
@@ -101,34 +107,6 @@ const Button = styled.a`
   width: 100px;
   padding: 10px;
   cursor: pointer;
-`;
-
-const IconDetalies = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  gap: 10px;
-`;
-
-const Icon = styled.a`
-  width: 20px;
-  font-size: 50px;
-  cursor: pointer;
-  color: #e2725b;
-  margin-top: 2px;
-`;
-
-const IconName = styled.p`
-  color: white;
-  font-size: 15px;
-  width: auto;
-  margin-left: 5px;
-  text-align: start;
-`;
-
-const Domain = styled.h1`
-  text-align: start;
-  color: #ff7518;
 `;
 
 const who = () => {
@@ -147,67 +125,44 @@ const who = () => {
         <Right>
           <Title>Skills</Title>
           <WhatWeDo>
-            <Domain> Web devolopment</Domain>
+            <Domain>Frontend Development</Domain>
             <Icons>
-              <IconDetalies>
-                <Icon>
-                  <FaHtml5 />
-                </Icon>
-                <IconName>HTML5</IconName>
-              </IconDetalies>
-              <IconDetalies>
-                <Icon>
-                  <FaCss3 />
-                </Icon>
-                <IconName>CSS3</IconName>
-              </IconDetalies>
+              <IconDetalies><Icon><FaHtml5 /></Icon><IconName>HTML5</IconName></IconDetalies>
+              <IconDetalies><Icon><FaCss3 /></Icon><IconName>CSS3</IconName></IconDetalies>
+              <IconDetalies><Icon><RiJavascriptFill /></Icon><IconName>JavaScript</IconName></IconDetalies>
+              <IconDetalies><Icon><SiTypescript /></Icon><IconName>TypeScript</IconName></IconDetalies>
+              <IconDetalies><Icon><RiReactjsFill /></Icon><IconName>React.js</IconName></IconDetalies>
+              <IconDetalies><Icon><SiNextdotjs /></Icon><IconName>Next.js</IconName></IconDetalies>
+              <IconDetalies><Icon><SiBootstrap /></Icon><IconName>Bootstrap</IconName></IconDetalies>
+              <IconDetalies><Icon><SiTailwindcss /></Icon><IconName>Tailwind CSS</IconName></IconDetalies>
+              <IconDetalies><Icon><SiReact /></Icon><IconName>React Native</IconName></IconDetalies>
+            </Icons>
+          </WhatWeDo>
 
-              <IconDetalies>
-                <Icon>
-                  <RiJavascriptFill />
-                </Icon>
-                <IconName>JavaScript</IconName>
-              </IconDetalies>
-              <IconDetalies>
-                <Icon>
-                  <RiReactjsFill />
-                </Icon>
-                <IconName>React Js</IconName>
-              </IconDetalies>
-              <IconDetalies>
-                <Icon>
-                  <FaNodeJs />
-                </Icon>
-                <IconName>Node Js</IconName>
-              </IconDetalies>
-              <IconDetalies>
-                <Icon>
-                  <SiMongodb />
-                </Icon>
-                <IconName>MongoDB</IconName>
-              </IconDetalies>
-            </Icons>
-          </WhatWeDo>
           <WhatWeDo>
-            <Domain> Programming Languages </Domain>
+            <Domain>Backend Development</Domain>
             <Icons>
-              <IconDetalies>
-                <Icon>
-                  <FaPython />
-                </Icon>
-                <IconName>Python</IconName>
-              </IconDetalies>
-              <IconDetalies>
-                <Icon>
-                  <FaJava />
-                </Icon>
-                <IconName>Java</IconName>
-              </IconDetalies>
+              <IconDetalies><Icon><FaNodeJs /></Icon><IconName>Node.js</IconName></IconDetalies>
+              <IconDetalies><Icon><SiExpress /></Icon><IconName>Express.js</IconName></IconDetalies>
+              <IconDetalies><Icon><SiFlask /></Icon><IconName>Flask</IconName></IconDetalies>
             </Icons>
           </WhatWeDo>
-          <Button href="/resume.pdf" target="_blank">
-            Resume
-          </Button>
+
+          <WhatWeDo>
+            <Domain>Databases</Domain>
+            <Icons>
+              <IconDetalies><Icon><SiMongodb /></Icon><IconName>MongoDB</IconName></IconDetalies>
+              <IconDetalies><Icon><SiMysql /></Icon><IconName>MySQL</IconName></IconDetalies>
+              <IconDetalies><Icon><SiFirebase /></Icon><IconName>Firebase</IconName></IconDetalies>
+            </Icons>
+          </WhatWeDo>
+
+          <WhatWeDo>
+            <Domain>Testing</Domain>
+            <Icons>
+              <IconDetalies><Icon><SiCypress /></Icon><IconName>Cypress</IconName></IconDetalies>
+            </Icons>
+          </WhatWeDo>
         </Right>
       </Container>
     </Section>
